@@ -11,7 +11,7 @@ echo "📦 Movendo arquivos do build para templates/static do Flask..."
 mkdir -p ../templates
 mkdir -p ../static
 
-# Move o conteúdo da pasta build/dist para a pasta correta
+# Move o conteúdo da pasta dist para a pasta correta
 cp -r dist/* ../static/
 cp dist/index.html ../templates/index.html
 

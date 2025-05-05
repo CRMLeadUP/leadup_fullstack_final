@@ -3,16 +3,16 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  base: "/static/",  // Necessário para garantir que os arquivos JS/CSS sejam encontrados corretamente
+  base: "/static/",  // 🔴 Isso diz para o React que os arquivos vão estar na pasta /static/
   build: {
-    outDir: 'dist',
+    outDir: 'dist',        // Para onde o React gera o build
     emptyOutDir: true,
-    assetsDir: "assets", // Coloca arquivos estáticos na pasta /static/assets/
+    assetsDir: "assets"    // Os arquivos como JS e CSS vão para /static/assets/
   },
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  plugins: [react()],
 });

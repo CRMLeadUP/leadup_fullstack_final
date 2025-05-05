@@ -1,3 +1,11 @@
-export default function App() {
-  return <h1 className="text-2xl text-center mt-10 text-blue-600">Bem-vindo ao LeadUP CRM!</h1>;
-}
+from flask import Flask, render_template
+
+app = Flask(__name__, static_folder="static", template_folder=".")
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def index(path):
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run()

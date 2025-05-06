@@ -1,11 +1,10 @@
-from flask import Flask, render_template
+import React from 'react';
 
-app = Flask(__name__, static_folder="static", template_folder=".")
-
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def index(path):
-    return render_template("index.html")
-
-if __name__ == "__main__":
-    app.run()
+export default function App() {
+  return (
+    <div style={{ textAlign: 'center', padding: '50px' }}>
+      <h1>🚀 Bem-vindo ao LeadUP CRM</h1>
+      <p>Seu app está funcionando perfeitamente!</p>
+    </div>
+  );
+}
